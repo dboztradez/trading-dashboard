@@ -1,1 +1,149 @@
-<html><head><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">ol{margin:0;padding:0}table td,table th{padding:0}.c2{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}.c0{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c3{background-color:#ffffff;max-width:468pt;padding:72pt 72pt 72pt 72pt}.c1{height:11pt}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}</style></head><body class="c3 doc-content"><p class="c0"><span class="c2">&lt;!DOCTYPE html&gt;</span></p><p class="c0"><span class="c2">&lt;html lang=&quot;en&quot;&gt;</span></p><p class="c0"><span class="c2">&lt;head&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;meta charset=&quot;UTF-8&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;title&gt;Trading Dashboard&lt;/title&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;script src=&quot;https://cdn.jsdelivr.net/npm/chart.js&quot;&gt;&lt;/script&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;style&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; body {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-family: Arial, sans-serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 0;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 20px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-color: #f4f4f4;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; .container {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; max-width: 1200px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: auto;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: #fff;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 20px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 8px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; box-shadow: 0 0 10px rgba(0,0,0,0.1);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; .tabs {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: flex;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; gap: 10px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin-bottom: 20px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; .tab-button {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 10px 20px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cursor: pointer;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: #ddd;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border: none;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 5px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; .tab-button.active {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: #2196F3;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: #fff;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; .report-content {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: none;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; .report-content.active {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: block;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; .chart-container {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin-top: 20px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; h2 {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: #333;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; pre {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: #f9f9f9;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 10px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 5px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/style&gt;</span></p><p class="c0"><span class="c2">&lt;/head&gt;</span></p><p class="c0"><span class="c2">&lt;body&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;container&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;h1&gt;Trading Dashboard&lt;/h1&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tabs&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;button class=&quot;tab-button active&quot; onclick=&quot;showTab(&#39;forex&#39;)&quot;&gt;Daily Forex Report&lt;/button&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;button class=&quot;tab-button&quot; onclick=&quot;showTab(&#39;stocks&#39;)&quot;&gt;Weekly Stock Report&lt;/button&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div id=&quot;forex&quot; class=&quot;report-content active&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h2&gt;Daily Forex Report (USD-Based Pairs)&lt;/h2&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;pre id=&quot;forex-report&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Paste Daily Forex Report Here]</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Example (July 29, 2025, 4:00 AM CDT):</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; EUR/USD: Price ~1.1738. Bullish above 1.1700 (RSI 45). Trade: Buy at 1.1740, target 1.1800, stop-loss 1.1700.</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; USD/JPY: Price ~146.57. Resistance at 147.00. Trade: Buy above 147.00, target 148.00, stop-loss 146.00.</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/pre&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;chart-container&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;canvas id=&quot;forexChart&quot;&gt;&lt;/canvas&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div id=&quot;stocks&quot; class=&quot;report-content&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h2&gt;Weekly Stock Report&lt;/h2&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;pre id=&quot;stock-report&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Paste Weekly Stock Report Here]</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Example (August 3, 2025, 8:00 PM CDT):</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; JP Morgan (JPM): Price ~$212. MACD crossover. Trade: Buy at $212, target $220, stop-loss $205.</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Netflix (NFLX): Price ~$650. Breakout above $660. Trade: Buy at $660, target $680, stop-loss $640.</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/pre&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;chart-container&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;canvas id=&quot;stockChart&quot;&gt;&lt;/canvas&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;script&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; // Tab switching functionality</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; function showTab(tabId) {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.querySelectorAll(&#39;.tab-button&#39;).forEach(button =&gt; {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; button.classList.remove(&#39;active&#39;);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.querySelectorAll(&#39;.report-content&#39;).forEach(content =&gt; {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; content.classList.remove(&#39;active&#39;);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.querySelector(`[onclick=&quot;showTab(&#39;${tabId}&#39;)&quot;]`).classList.add(&#39;active&#39;);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(tabId).classList.add(&#39;active&#39;);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; // Sample Chart.js chart for Forex (EUR/USD)</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; const forexChart = new Chart(document.getElementById(&#39;forexChart&#39;), {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; type: &#39;line&#39;,</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; data: {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; labels: [&#39;Mon&#39;, &#39;Tue&#39;, &#39;Wed&#39;, &#39;Thu&#39;, &#39;Fri&#39;],</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; datasets: [{</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; label: &#39;EUR/USD Price&#39;,</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; data: [1.1750, 1.1780, 1.1790, 1.1760, 1.1738],</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; borderColor: &#39;#2196F3&#39;,</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; backgroundColor: &#39;rgba(33, 150, 243, 0.2)&#39;,</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fill: false</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }]</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; options: {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scales: {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; y: { title: { display: true, text: &#39;Price&#39; } },</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; x: { title: { display: true, text: &#39;Day&#39; } }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; plugins: { title: { display: true, text: &#39;EUR/USD Daily Trend (Week of July 28, 2025)&#39; } }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; // Sample Chart.js chart for Stocks (JPM)</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; const stockChart = new Chart(document.getElementById(&#39;stockChart&#39;), {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; type: &#39;bar&#39;,</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; data: {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; labels: [&#39;JP Morgan&#39;, &#39;Netflix&#39;, &#39;Palantir&#39;],</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; datasets: [{</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; label: &#39;Weekly Price Change (%)&#39;,</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; data: [4.8, 3.5, 2.9],</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; backgroundColor: [&#39;#4CAF50&#39;, &#39;#2196F3&#39;, &#39;#FF9800&#39;],</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; borderColor: [&#39;#388E3C&#39;, &#39;#1976D2&#39;, &#39;#F57C00&#39;],</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; borderWidth: 1</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }]</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; options: {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scales: {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; y: { title: { display: true, text: &#39;Price Change (%)&#39; } },</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; x: { title: { display: true, text: &#39;Stock&#39; } }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; plugins: { title: { display: true, text: &#39;Stock Performance (Week of August 3, 2025)&#39; } }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; });</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/script&gt;</span></p><p class="c0"><span class="c2">&lt;/body&gt;</span></p><p class="c0"><span class="c2">&lt;/html&gt;</span></p><p class="c0 c1"><span class="c2"></span></p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tab-button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #ddd;
+            border: none;
+            border-radius: 5px;
+        }
+        .tab-button.active {
+            background: #2196F3;
+            color: #fff;
+        }
+        .report-content {
+            display: none;
+        }
+        .report-content.active {
+            display: block;
+        }
+        .chart-container {
+            margin-top: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        pre {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trading Dashboard</h1>
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('forex')">Daily Forex Report</button>
+            <button class="tab-button" onclick="showTab('stocks')">Weekly Stock Report</button>
+        </div>
+        <div id="forex" class="report-content active">
+            <h2>Daily Forex Report (USD-Based Pairs)</h2>
+            <pre id="forex-report">
+                [Paste Daily Forex Report Here]
+                Example (July 29, 2025, 4:00 AM CDT):
+                EUR/USD: Price ~1.1738. Bullish above 1.1700 (RSI 45). Trade: Buy at 1.1740, target 1.1800, stop-loss 1.1700.
+                USD/JPY: Price ~146.57. Resistance at 147.00. Trade: Buy above 147.00, target 148.00, stop-loss 146.00.
+            </pre>
+            <div class="chart-container">
+                <canvas id="forexChart"></canvas>
+            </div>
+        </div>
+        <div id="stocks" class="report-content">
+            <h2>Weekly Stock Report</h2>
+            <pre id="stock-report">
+                [Paste Weekly Stock Report Here]
+                Example (August 3, 2025, 8:00 PM CDT):
+                JP Morgan (JPM): Price ~$212. MACD crossover. Trade: Buy at $212, target $220, stop-loss $205.
+                Netflix (NFLX): Price ~$650. Breakout above $660. Trade: Buy at $660, target $680, stop-loss $640.
+            </pre>
+            <div class="chart-container">
+                <canvas id="stockChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelectorAll('.report-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Sample Chart.js chart for Forex (EUR/USD)
+        const forexChart = new Chart(document.getElementById('forexChart'), {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                datasets: [{
+                    label: 'EUR/USD Price',
+                    data: [1.1750, 1.1780, 1.1790, 1.1760, 1.1738],
+                    borderColor: '#2196F3',
+                    backgroundColor: 'rgba(33, 150, 243, 0.2)',
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: { title: { display: true, text: 'Price' } },
+                    x: { title: { display: true, text: 'Day' } }
+                },
+                plugins: { title: { display: true, text: 'EUR/USD Daily Trend (Week of July 28, 2025)' } }
+            }
+        });
+
+        // Sample Chart.js chart for Stocks (JPM)
+        const stockChart = new Chart(document.getElementById('stockChart'), {
+            type: 'bar',
+            data: {
+                labels: ['JP Morgan', 'Netflix', 'Palantir'],
+                datasets: [{
+                    label: 'Weekly Price Change (%)',
+                    data: [4.8, 3.5, 2.9],
+                    backgroundColor: ['#4CAF50', '#2196F3', '#FF9800'],
+                    borderColor: ['#388E3C', '#1976D2', '#F57C00'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: { title: { display: true, text: 'Price Change (%)' } },
+                    x: { title: { display: true, text: 'Stock' } }
+                },
+                plugins: { title: { display: true, text: 'Stock Performance (Week of August 3, 2025)' } }
+            }
+        });
+    </script>
+</body>
+</html>

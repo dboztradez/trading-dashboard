@@ -1,0 +1,59 @@
+### Daily Cryptocurrency Report: BTC/USD, ETH/USD, XRP/USD (July 29, 2025)
+
+#### Bitcoin (BTC/USD)
+- **Current Price**: $119,250 (up 0.45% in the past 24 hours)[](https://in.tradingview.com/symbols/BTCUSD/)
+- **Technical Analysis**:
+  - **Support**: $114,000 (key level from recent consolidation)
+  - **Resistance**: $120,000 (recent high, psychological barrier)
+  - **RSI**: 69 (nearing overbought, suggesting caution)
+  - **MACD**: Bullish crossover, histogram showing positive momentum
+  - **Trend**: Consolidating within a bullish pennant on the 1H chart, indicating potential for continuation but risk of a trap[](https://www.tradingview.com/symbols/BTCUSD/)
+- **Fundamental Factors**:
+  - **Market Sentiment**: Risk-on sentiment prevails, supported by positive economic climate and institutional interest (e.g., BlackRock’s ETF inflows). Profit-taking caused a minor 2.3% dip, but analysts view it as a temporary correction.[](https://www.tradingview.com/symbols/ETHUSD/)
+  - **Regulatory News**: No major regulatory updates in the past 24 hours, but improving U.S. regulatory environment boosts sentiment.[](https://www.fxstreet.com/cryptocurrencies/news/ripple-price-forecast-could-open-interest-buy-signals-coinbase-derivatives-backed-xrp-futures-drive-price-to-3-202504210500)
+- **Trade Idea**:
+  - **Entry**: Buy at $119,500 (post-consolidation breakout confirmation).
+  - **Target**: $122,000 (next resistance zone).
+  - **Stop-Loss**: $117,500 (below recent support).
+  - **Rationale**: Bullish MACD and pennant breakout suggest upward momentum, but RSI nearing 70 warrants tight risk management.[](https://www.tradingview.com/symbols/BTCUSD/)
+
+#### Ethereum (ETH/USD)
+- **Current Price**: $3,820 (down 0.22% in the past 24 hours)[](https://www.tradingview.com/symbols/ETHUSD/)
+- **Technical Analysis**:
+  - **Support**: $3,750 (recent low, aligns with 20-day SMA)
+  - **Resistance**: $3,900 (near-term target)
+  - **RSI**: 67 (bullish momentum intact but cooling)
+  - **MACD**: Bearish crossover on 1D timeframe, signaling potential short-term pullback[](https://www.tradingview.com/symbols/ETHUSD/)
+  - **Trend**: Testing horizontal resistance at $3,641.87, with a bearish outlook if rejected[](https://www.tradingview.com/symbols/ETHUSD/)
+- **Fundamental Factors**:
+  - **Market Sentiment**: Strong institutional inflows ($1.59B last week, second-highest ever) and positive economic climate support ETH. However, a 6% pullback reflects profit-taking.[](https://www.tradingview.com/symbols/ETHUSD/)
+  - **Regulatory News**: No specific regulatory updates, but broader crypto-friendly sentiment aids ETH.[](https://www.fxstreet.com/cryptocurrencies/news/ripple-price-forecast-could-open-interest-buy-signals-coinbase-derivatives-backed-xrp-futures-drive-price-to-3-202504210500)
+- **Trade Idea**:
+  - **Entry**: Sell at $3,850 (near resistance retest).
+  - **Target**: $3,700 (support zone).
+  - **Stop-Loss**: $3,950 (above resistance).
+  - **Rationale**: Bearish MACD and overbought RSI suggest a potential correction, especially if resistance holds.[](https://www.tradingview.com/symbols/ETHUSD/)
+
+#### XRP (XRP/USD)
+- **Current Price**: $3.20 (up 1.31% in the past 24 hours)[](https://bitcoinethereumnews.com/tech/xrp-price-surges-to-3-20-after-whale-sell-off-recovery-technical-analysis-shows-mixed-signals/)
+- **Technical Analysis**:
+  - **Support**: $3.06 (20-day SMA)[](https://bitcoinethereumnews.com/tech/xrp-price-surges-to-3-20-after-whale-sell-off-recovery-technical-analysis-shows-mixed-signals/)
+  - **Resistance**: $3.66 (recent peak)[](https://bitcoinethereumnews.com/tech/xrp-price-surges-to-3-20-after-whale-sell-off-recovery-technical-analysis-shows-mixed-signals/)
+  - **RSI**: 62.71 (neutral, no extreme conditions)[](https://bitcoinethereumnews.com/tech/xrp-price-surges-to-3-20-after-whale-sell-off-recovery-technical-analysis-shows-mixed-signals/)
+  - **MACD**: Bearish momentum (MACD line below signal line, histogram at -0.0323)[](https://bitcoinethereumnews.com/tech/xrp-price-surges-to-3-20-after-whale-sell-off-recovery-technical-analysis-shows-mixed-signals/)
+  - **Trend**: Bullish foundation with price above key SMAs, but bearish MACD signals caution[](https://bitcoinethereumnews.com/tech/xrp-price-surges-to-3-20-after-whale-sell-off-recovery-technical-analysis-shows-mixed-signals/)
+- **Fundamental Factors**:
+  - **Market Sentiment**: Cautious optimism after recovery from a whale-induced sell-off. Risk-on sentiment supports gains, but volatility remains a concern.[](https://bitcoinethereumnews.com/tech/xrp-price-surges-to-3-20-after-whale-sell-off-recovery-technical-analysis-shows-mixed-signals/)
+  - **Regulatory News**: No new regulatory developments in the past 24 hours, but an improving U.S. regulatory outlook supports XRP.[](https://www.fxstreet.com/cryptocurrencies/news/ripple-price-forecast-could-open-interest-buy-signals-coinbase-derivatives-backed-xrp-futures-drive-price-to-3-202504210500)
+- **Trade Idea**:
+  - **Entry**: Buy at $3.25 (above current price, confirming breakout).
+  - **Target**: $3.50 (near recent peak).
+  - **Stop-Loss**: $3.05 (below 20-day SMA).
+  - **Rationale**: Bullish SMA alignment supports upside, but bearish MACD suggests waiting for momentum confirmation.[](https://bitcoinethereumnews.com/tech/xrp-price-surges-to-3-20-after-whale-sell-off-recovery-technical-analysis-shows-mixed-signals/)
+
+#### Notes:
+- **Risk Warning**: Cryptocurrencies are highly volatile. Use proper risk management and avoid over-leveraging.[](https://www.investing.com/indices/bitcoin-real-time-technical)
+- **Data Sources**: Prices and technicals are sourced from real-time platforms like TradingView and recent X posts.[](https://www.tradingview.com/symbols/BTCUSD/)[](https://in.tradingview.com/symbols/BTCUSD/)
+- **Timeframe**: Analysis focuses on short-term trading (1D to 1H charts) based on data from July 28–29, 2025.
+
+Always conduct your own research before trading, as market conditions can change rapidly.[](https://www.investing.com/indices/bitcoin-real-time-technical)

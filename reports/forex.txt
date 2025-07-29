@@ -1,0 +1,107 @@
+**Daily Forex Report for USD-Based Pairs (July 29, 2025)**
+
+Below is a concise daily report for short-term trading of major USD-based forex pairs, incorporating current prices, technical analysis, fundamental factors, and trade ideas based on recent market data and events from the past 24 hours.
+
+---
+
+### **EUR/USD**
+- **Current Price**: 1.1587 (up 0.07% in the past 24 hours)[](https://www.tradingview.com/symbols/EURUSD/)
+- **Technical Analysis**:
+  - **Support/Resistance**: Support at 1.1540 (recently tested), 1.1500 (Fibonacci 38.2% retracement). Resistance at 1.1650 (200-period SMA), 1.1700 (100-period SMA).[](https://www.fxstreet.com/currencies/eurusd)
+  - **RSI (4-hour)**: Below 40, indicating bearish momentum.[](https://www.fxstreet.com/currencies/eurusd)
+  - **MACD**: Bearish, with the MACD line below the signal line, confirming downside pressure.[](https://m.fx.co/en/analysis?type=4)
+- **Fundamental Factors**:
+  - Bearish pressure persists due to a stronger USD amid optimism in U.S.-EU trade talks and elevated U.S. Treasury yields.
+  - Eurozone PMI data was mixed to weak, reinforcing dovish ECB expectations.[](https://uk.investing.com/analysis/forex)
+- **Trade Idea**:
+  - **Sell**: Entry at 1.1580, Target 1.1540, Stop-Loss 1.1620
+  - Rationale: Bearish momentum and resistance at 1.1650 suggest a retest of lower support.
+
+---
+
+### **USD/JPY**
+- **Current Price**: 147.80 (approaching key support)[](https://www.tradingview.com/markets/currencies/)
+- **Technical Analysis**:
+  - **Support/Resistance**: Support at 147.80 (trendline support), 146.50 (static level). Resistance at 148.50 (20-day SMA), 149.00 (50-day SMA).[](https://www.tradingview.com/markets/currencies/)[](https://www.forex.com/en-us/news-and-analysis/eur-usd-usdjpy-usdcad-outlook-us-dollar-slammed-ahead-of-pce-inflation-2025-05-30/)
+  - **RSI (Daily)**: Neutral at 50, suggesting indecision.[](https://www.ifcmarkets.com/en/technicals/forex-technical-analysis)
+  - **MACD**: Bearish hammer formed, indicating potential downside after a false break of 20/50-day SMAs.[](https://www.forex.com/en-us/news-and-analysis/eur-usd-usdjpy-usdcad-outlook-us-dollar-slammed-ahead-of-pce-inflation-2025-05-30/)
+- **Fundamental Factors**:
+  - USD weakened due to Trump’s tariffs remaining in effect, impacting risk sentiment.[](https://www.forex.com/en-us/news-and-analysis/eur-usd-usdjpy-usdcad-outlook-us-dollar-slammed-ahead-of-pce-inflation-2025-05-30/)
+  - Tokyo CPI data upcoming, which could influence yen strength.[](https://www.forex.com/en-us/news-and-analysis/eur-usd-usdjpy-usdcad-outlook-us-dollar-slammed-ahead-of-pce-inflation-2025-05-30/)
+- **Trade Idea**:
+  - **Buy**: Entry at 147.80, Target 148.50, Stop-Loss 147.30
+  - Rationale: Support at 147.80 offers a low-risk entry for a potential bounce to resistance.
+
+---
+
+### **GBP/USD**
+- **Current Price**: 1.3400 (edging lower)[](https://www.fxstreet.com/currencies/gbpusd)
+- **Technical Analysis**:
+  - **Support/Resistance**: Support at 1.3400 (Fibonacci 61.8%), 1.3340 (100-day SMA). Resistance at 1.3470 (Fibonacci 50%), 1.3500 (100-period SMA).[](https://www.fxstreet.com/currencies/gbpusd)
+  - **RSI (4-hour)**: Below 40, reflecting bearish stance.[](https://www.fxstreet.com/currencies/gbpusd)
+  - **MACD**: Bearish, with negative divergence signaling further downside.[](https://m.fx.co/en/analysis?type=4)
+- **Fundamental Factors**:
+  - GBP benefits from capital outflows from EUR due to U.S.-EU trade deal optimism, but USD strength limits upside.[](https://www.fxstreet.com/currencies/gbpusd)
+  - BoE’s dovish stance and fragile UK economy cap GBP gains.[](https://www.fxstreet.com/currencies/gbpusd)
+- **Trade Idea**:
+  - **Sell**: Entry at 1.3400, Target 1.3340, Stop-Loss 1.3440
+  - Rationale: Bearish technicals and USD strength suggest a move toward lower support.
+
+---
+
+### **USD/CHF**
+- **Current Price**: 0.8760 (breaking lower)[](https://uk.investing.com/analysis/forex)
+- **Technical Analysis**:
+  - **Support/Resistance**: Support at 0.8700 (April low), 0.8600 (static level). Resistance at 0.8760 (recent high), 0.8800 (static level).[](https://uk.investing.com/analysis/forex)[](https://www.forex.com/en-us/news-and-analysis/eur-usd-usdjpy-usdcad-outlook-us-dollar-slammed-ahead-of-pce-inflation-2025-05-30/)
+  - **RSI (Daily)**: Oversold, suggesting potential for a pause or reversal.[](https://uk.investing.com/analysis/forex)
+  - **MACD**: Bearish, favoring further downside with a head-and-shoulders top pattern.[](https://www.forex.com/en-us/news-and-analysis/eur-usd-usdjpy-usdcad-outlook-us-dollar-slammed-ahead-of-pce-inflation-2025-05-30/)
+- **Fundamental Factors**:
+  - Risk-off sentiment and Trump’s tariffs drive capital into CHF as a safe-haven.[](https://uk.investing.com/analysis/forex)
+  - SNB warns of negative inflation, supporting CHF strength.[](https://www.forex.com/en-us/news-and-analysis/eur-usd-usdjpy-usdcad-outlook-us-dollar-slammed-ahead-of-pce-inflation-2025-05-30/)
+- **Trade Idea**:
+  - **Sell**: Entry at 0.8760, Target 0.8700, Stop-Loss 0.8800
+  - Rationale: Bearish pattern and safe-haven flows favor CHF appreciation.
+
+---
+
+### **AUD/USD**
+- **Current Price**: 0.6500 (approximate, based on recent trends)[](https://www.actionforex.com/)
+- **Technical Analysis**:
+  - **Support/Resistance**: Support at 0.6480 (static level), 0.6400 (Fibonacci 38.2%). Resistance at 0.6550 (50-day SMA), 0.6600 (100-day SMA).[](https://www.actionforex.com/)
+  - **RSI (Daily)**: Neutral at 50, indicating consolidation.[](https://www.ifcmarkets.com/en/technicals/forex-technical-analysis)
+  - **MACD**: Flat, suggesting a lack of strong directional momentum.[](https://www.ifcmarkets.com/en/technicals/forex-technical-analysis)
+- **Fundamental Factors**:
+  - AUD pressured by global risk-off mood due to Trump’s tariffs.[](https://uk.investing.com/analysis/forex)
+  - No major Australian economic data released in the past 24 hours.[](https://www.actionforex.com/)
+- **Trade Idea**:
+  - **Sell**: Entry at 0.6500, Target 0.6480, Stop-Loss 0.6530
+  - Rationale: Risk-off sentiment and neutral technicals favor a cautious bearish approach.
+
+---
+
+### **USD/CAD**
+- **Current Price**: 1.3800 (approximate, based on recent trends)[](https://www.actionforex.com/)
+- **Technical Analysis**:
+  - **Support/Resistance**: Support at 1.3750 (Fibonacci 23.6%), 1.3700 (static level). Resistance at 1.3850 (50-day SMA), 1.3900 (100-day SMA).[](https://www.actionforex.com/)
+  - **RSI (Daily)**: Neutral at 55, indicating no strong trend.[](https://www.ifcmarkets.com/en/technicals/forex-technical-analysis)
+  - **MACD**: Slightly bullish, but momentum is weak.[](https://www.ifcmarkets.com/en/technicals/forex-technical-analysis)
+- **Fundamental Factors**:
+  - USD strength from trade optimism supports USD/CAD, but CAD benefits from oil price stability.
+  - No major Canadian data releases in the past 24 hours.[](https://www.actionforex.com/)
+- **Trade Idea**:
+  - **Buy**: Entry at 1.3800, Target 1.3850, Stop-Loss 1.3750
+  - Rationale: Mild bullish momentum and USD strength suggest a move toward resistance.
+
+---
+
+### **Market Overview**
+- **Fundamental Context**: The USD gained traction due to optimism in U.S.-EU trade talks and higher Treasury yields, though Trump’s tariffs continue to drive risk-off sentiment, boosting safe-havens like CHF and JPY.[](https://www.forex.com/en-us/news-and-analysis/eur-usd-usdjpy-usdcad-outlook-us-dollar-slammed-ahead-of-pce-inflation-2025-05-30/)
+- **Economic Data**: No high-tier data releases today, but focus shifts to upcoming U.S. PCE inflation and Tokyo CPI data, which could influence USD and JPY pairs.[](https://www.forex.com/en-us/news-and-analysis/eur-usd-usdjpy-usdcad-outlook-us-dollar-slammed-ahead-of-pce-inflation-2025-05-30/)
+- **Trade News**: U.S.-EU trade deal reactions have weakened EUR and supported GBP to some extent, while tariffs pressure AUD and CAD.[](https://uk.investing.com/analysis/forex)[](https://www.fxstreet.com/currencies/gbpusd)
+
+### **Risk Warning**
+Trading forex involves high risks, including the potential loss of investment. Prices are volatile and may be affected by economic, political, or regulatory events. Always use proper risk management.[](https://www.investing.com/currencies/eur-usd-technical)
+
+---
+
+*Note*: Prices are approximate and based on the latest available data. Verify real-time prices before trading. Trade ideas are for educational purposes and should be tested on a demo account first.

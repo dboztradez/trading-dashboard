@@ -1,4 +1,43 @@
-<!DOCTYPE html>
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,6 +58,23 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .ticker-tape {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 60s linear infinite; /* Slowed to 60s */
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
         .tabs {
             display: flex;
@@ -42,178 +98,135 @@
         .report-content.active {
             display: block;
         }
-        .chart-container {
+        .report-text {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            word-wrap: break-word;
+            max-width: 100%;
+            line-height: 1.6;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+        .news-section {
             margin-top: 20px;
         }
-        h2 {
+        .news-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .news-item a {
+            color: #2196F3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+        .chart-container {
+            margin-top: 20px;
+            max-width: 600px;
+        }
+        h2, h3 {
             color: #333;
         }
-        pre {
-            background: #f9f9f9;
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            resize: vertical;
             padding: 10px;
             border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            padding: 10px;
+            background: #2196F3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1976D2;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="ticker-tape">
+            <div class="ticker-content" id="ticker">
+                Loading ticker data...
+            </div>
+        </div>
         <h1>Trading Dashboard</h1>
         <div class="tabs">
             <button class="tab-button active" onclick="showTab('forex')">Daily Forex Report</button>
             <button class="tab-button" onclick="showTab('stocks')">Weekly Stock Report</button>
+            <button class="tab-button" onclick="showTab('crypto')">Crypto Report</button>
         </div>
         <div id="forex" class="report-content active">
             <h2>Daily Forex Report (USD-Based Pairs)</h2>
-            <pre id="forex-report">
-                            
-            **Daily Forex Report for USD-Based Pairs (July 29, 2025)**
-            
-            Below is a concise daily report for short-term trading on major USD-based forex pairs, incorporating current prices, technical analysis, fundamental factors, and trade ideas based on the latest available data from the past 24 hours.
-            
-            ---
-            
-            ### **EUR/USD**
-            - **Current Price**: 1.1540 (based on recent posts indicating a break below 1.1650)
-            - **Technical Analysis**:
-              - **Support**: 1.1540 (current tested support), 1.15221 (next target)
-              - **Resistance**: 1.1650 (recently broken), 1.17350, 1.1780
-              - **RSI**: Bearish, below 40 on the 4-hour chart, reflecting downside momentum[](https://www.fxstreet.com/currencies/gbpusd)
-              - **MACD**: Bearish crossover, signaling continued downward pressure[](https://m.fx.co/en/analysis?type=4)
-              - **Trend**: Bearish after breaking an uptrend and retesting resistance at 1.1650
-            - **Fundamental Factors**:
-              - EU-US trade deal reactions have weakened the Euro, with investors anticipating no further ECB rate cuts in the near term[](https://www.investing.com/analysis/forex)
-              - Eurozone PMI data showed mixed to weak performance, adding pressure on EUR[](https://www.tradingview.com/symbols/EURUSD/)
-            - **Trade Idea**:
-              - **Sell Setup**: Entry at 1.1540, Target at 1.15221, Stop-Loss at 1.1590
-              - **Rationale**: Bearish momentum confirmed by technical breakdown and weak Eurozone fundamentals
-            
-            ---
-            
-            ### **USD/JPY**
-            - **Current Price**: 146.57 (up 0.07% in the European session)[](https://www.investing.com/analysis/forex)
-            - **Technical Analysis**:
-              - **Support**: 145.83 (recent low), 147.800 (key support/resistance zone)[](https://www.investing.com/analysis/forex)[](https://www.tradingview.com/markets/currencies/)
-              - **Resistance**: 148.00 (bullish target)[](https://www.fxstreet.com/currencies/eurusd)
-              - **RSI**: Neutral, around 50, indicating no overbought/oversold conditions[](https://www.ifcmarkets.com/en/technicals/forex-technical-analysis)
-              - **MACD**: Bullish crossover forming, suggesting potential upside[](https://www.ifcmarkets.com/en/technicals/forex-technical-analysis)
-              - **Trend**: Uptrend with correction phase approaching 147.800 support[](https://www.tradingview.com/markets/currencies/)
-            - **Fundamental Factors**:
-              - US-Japan trade deal optimism and rising US Treasury yields bolster USD strength[](https://www.investing.com/analysis/forex)
-              - Tokyo inflation data came in lower than expected, weakening JPY[](https://www.investing.com/analysis/forex)
-            - **Trade Idea**:
-              - **Buy Setup**: Entry at 147.800, Target at 148.00, Stop-Loss at 147.300
-              - **Rationale**: Bullish price patterns and yield tailwinds support upside potential[](https://www.investing.com/analysis/forex)[](https://www.tradingview.com/markets/currencies/)
-            
-            ---
-            
-            ### **GBP/USD**
-            - **Current Price**: 1.3446 (down 0.43% in the European session)[](https://www.investing.com/analysis/forex)
-            - **Technical Analysis**:
-              - **Support**: 1.3400 (Fibonacci 61.8% retracement), 1.3340 (100-day SMA)[](https://www.fxstreet.com/currencies/gbpusd)
-              - **Resistance**: 1.3470 (Fibonacci 50% retracement), 1.3500 (100-period SMA)[](https://www.fxstreet.com/currencies/gbpusd)
-              - **RSI**: Bearish, below 40 on the 4-hour chart, reflecting selling pressure[](https://www.fxstreet.com/currencies/gbpusd)
-              - **MACD**: Bearish, confirming downward trend[](https://www.ifcmarkets.com/en/technicals/forex-technical-analysis)
-              - **Trend**: Bearish after failing to hold above 1.3470[](https://www.fxstreet.com/currencies/gbpusd)
-            - **Fundamental Factors**:
-              - UK retail sales rebounded by 0.9% but missed forecasts, weakening GBP[](https://www.investing.com/analysis/forex)
-              - US Dollar strength driven by trade deal optimism and rising yields
-            - **Trade Idea**:
-              - **Sell Setup**: Entry at 1.3446, Target at 1.3400, Stop-Loss at 1.3475
-              - **Rationale**: Bearish technicals and weak UK data support further downside[](https://www.investing.com/analysis/forex)[](https://www.fxstreet.com/currencies/gbpusd)
-            
-            ---
-            
-            ### **USD/CHF**
-            - **Current Price**: ~0.79632 (near recent highs after finding support at 0.78309)[](https://www.investing.com/analysis/forex)
-            - **Technical Analysis**:
-              - **Support**: 0.78309 (previous monthly low)[](https://www.investing.com/analysis/forex)
-              - **Resistance**: 0.8760 (recent resistance)[](https://uk.investing.com/analysis/forex)
-              - **RSI**: Oversold, favoring potential downside correction[](https://uk.investing.com/analysis/forex)
-              - **MACD**: Bearish momentum, but weakening, suggesting a possible reversal[](https://uk.investing.com/analysis/forex)
-              - **Trend**: Bearish but showing reversal patterns with yield support[](https://www.investing.com/analysis/forex)
-            - **Fundamental Factors**:
-              - Risk aversion and Trump’s tariff policies drive capital into CHF, but USD gains from rising yields[](https://uk.investing.com/analysis/forex)
-              - Key US data looming, which could impact USD strength[](https://uk.investing.com/analysis/forex)
-            - **Trade Idea**:
-              - **Buy Setup**: Entry at 0.79632, Target at 0.8050, Stop-Loss at 0.7900
-              - **Rationale**: Bullish reversal patterns and USD yield support suggest upside potential[](https://www.investing.com/analysis/forex)[](https://uk.investing.com/analysis/forex)
-            
-            ---
-            
-            ### **AUD/USD**
-            - **Current Price**: ~0.79632 (near 2025 highs)[](https://www.investing.com/analysis/forex)
-            - **Technical Analysis**:
-              - **Support**: 0.7900 (ascending channel support)[](https://www.investing.com/analysis/forex)
-              - **Resistance**: 0.8000 (psychological level, channel top)[](https://www.investing.com/analysis/forex)
-              - **RSI**: Neutral, around 55, indicating room for movement[](https://www.fxleaders.com/live-rates/gbp-usd/)
-              - **MACD**: Bullish, supporting upward momentum[](https://www.ifcmarkets.com/en/technicals/forex-technical-analysis)
-              - **Trend**: Bullish within an ascending channel[](https://www.investing.com/analysis/forex)
-            - **Fundamental Factors**:
-              - Strong Australian data and trade deal optimism support AUD strength[](https://www.investing.com/analysis/forex)
-              - Upcoming CPI data could influence AUD’s rally sustainability[](https://www.investing.com/analysis/forex)
-            - **Trade Idea**:
-              - **Buy Setup**: Entry at 0.79632, Target at 0.8000, Stop-Loss at 0.7920
-              - **Rationale**: Bullish channel and positive fundamentals favor upside[](https://www.investing.com/analysis/forex)
-            
-            ---
-            
-            ### **USD/CAD**
-            - **Current Price**: Not explicitly stated in sources, but USD strength suggests upward pressure
-            - **Technical Analysis**:
-              - **Support**: 1.3800 (recent low, assumed based on USD strength)[](https://www.actionforex.com/)
-              - **Resistance**: 1.3900 (pivot point)[](https://www.actionforex.com/)
-              - **RSI**: Neutral, around 50, based on general USD pair trends[](https://www.ifcmarkets.com/en/technicals/forex-technical-analysis)
-              - **MACD**: Bullish crossover forming, indicating potential upside[](https://www.ifcmarkets.com/en/technicals/forex-technical-analysis)
-              - **Trend**: Bullish due to USD momentum
-            - **Fundamental Factors**:
-              - USD gains from trade talk optimism and rising Treasury yields
-              - CAD faces pressure from global risk sentiment and oil demand outlook[](https://www.fxstreet.com/currencies/eurusd)
-            - **Trade Idea**:
-              - **Buy Setup**: Entry at 1.3850, Target at 1.3900, Stop-Loss at 1.3800
-              - **Rationale**: USD strength and bullish technicals support upward move[](https://www.actionforex.com/)
-            
-            ---
-            
-            ### **General Market Sentiment**
-            - **USD Strength**: The US Dollar is gaining traction due to optimism in US-EU and US-Japan trade talks, rising Treasury yields, and divergent central bank policies (Fed vs. ECB/BoJ)[](https://www.investing.com/analysis/forex)
-            - **Risk Sentiment**: Mixed, with risk-on sentiment supporting AUD and USD, while risk-off flows bolster CHF and JPY to a lesser extent[](https://uk.investing.com/analysis/forex)
-            - **Key Events**: Upcoming US data (FOMC meeting, Q2 GDP, PCE deflator, jobs data) and trade developments will drive volatility[](https://www.investing.com/analysis/forex)
-            
-            ---
-            
-            ### **Notes**
-            - Prices and levels are based on the latest available data and may fluctuate; confirm with real-time charts before trading.
-            - Risk management is critical due to high volatility from trade news and upcoming economic data.
-            - Always verify entry points and adjust stop-loss levels based on your risk tolerance and real-time market conditions.
-            
-            **Disclaimer**: Trading involves high risks, including potential loss of investment. Always conduct your own analysis and consult a financial advisor before trading.[](https://www.investing.com/currencies/eur-usd-technical)
-            
-            --- 
-            
-            This report leverages real-time web and X data from the past 24 hours, ensuring relevance and accuracy for short-term trading decisions.[](https://www.investing.com/currencies/eur-usd-technical)[](https://www.fxstreet.com/currencies/eurusd)[](https://www.investing.com/analysis/forex)
-
-
-                
-            </pre>
+            <div id="forex-report" class="report-text">
+                Loading forex report...
+            </div>
+            <div class="news-section">
+                <h3>Forex News</h3>
+                <div id="forex-news">Loading news...</div>
+            </div>
             <div class="chart-container">
                 <canvas id="forexChart"></canvas>
             </div>
         </div>
         <div id="stocks" class="report-content">
             <h2>Weekly Stock Report</h2>
-            <pre id="stock-report">
-                [Paste Weekly Stock Report Here]
-                Example (August 3, 2025, 8:00 PM CDT):
-                JP Morgan (JPM): Price ~$212. MACD crossover. Trade: Buy at $212, target $220, stop-loss $205.
-                Netflix (NFLX): Price ~$650. Breakout above $660. Trade: Buy at $660, target $680, stop-loss $640.
-            </pre>
+            <div id="stock-report" class="report-text">
+                Loading stock report...
+            </div>
+            <div class="news-section">
+                <h3>Stock News</h3>
+                <div id="stock-news">Loading news...</div>
+            </div>
             <div class="chart-container">
                 <canvas id="stockChart"></canvas>
             </div>
         </div>
+        <div id="crypto" class="report-content">
+            <h2>Crypto Report</h2>
+            <div id="crypto-report" class="report-text">
+                Loading crypto report...
+            </div>
+            <div class="news-section">
+                <h3>Crypto News</h3>
+                <div id="crypto-news">Loading news...</div>
+            </div>
+            <div class="chart-container">
+                <canvas id="cryptoChart"></canvas>
+            </div>
+        </div>
+        <form id="update-form">
+            <textarea id="forex-input" placeholder="Paste Forex Report (or use reports/forex.txt)"></textarea>
+            <textarea id="stock-input" placeholder="Paste Stock Report (or use reports/stocks.txt)"></textarea>
+            <textarea id="crypto-input" placeholder="Paste Crypto Report (or use reports/crypto.txt)"></textarea>
+            <textarea id="ticker-input" placeholder="Paste Ticker Updates (or use reports/ticker.txt)"></textarea>
+            <button type="submit">Update Reports Manually</button>
+        </form>
     </div>
 
     <script>
+        // Sanitize text to strip HTML tags
+        function sanitizeText(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.textContent.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
         // Tab switching functionality
         function showTab(tabId) {
             document.querySelectorAll('.tab-button').forEach(button => {
@@ -225,6 +238,88 @@
             document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
             document.getElementById(tabId).classList.add('active');
         }
+
+        // Load reports from text files in reports/ subfolder
+        async function loadReports() {
+            try {
+                const forexResponse = await fetch('reports/forex.txt');
+                const forexText = await forexResponse.text();
+                document.getElementById('forex-report').textContent = sanitizeText(forexText || '[No Forex Report Available]');
+
+                const stockResponse = await fetch('reports/stocks.txt');
+                const stockText = await stockResponse.text();
+                document.getElementById('stock-report').textContent = sanitizeText(stockText || '[No Stock Report Available]');
+
+                const cryptoResponse = await fetch('reports/crypto.txt');
+                const cryptoText = await cryptoResponse.text();
+                document.getElementById('crypto-report').textContent = sanitizeText(cryptoText || '[No Crypto Report Available]');
+
+                const tickerResponse = await fetch('reports/ticker.txt');
+                const tickerText = await tickerResponse.text();
+                const sanitizedTicker = sanitizeText(tickerText || 'No ticker updates available');
+                const tickerElement = document.getElementById('ticker');
+                tickerElement.textContent = sanitizedTicker;
+                // Adjust animation duration based on content length
+                const duration = Math.max(60, sanitizedTicker.length * 0.5);
+                tickerElement.style.animationDuration = `${duration}s`;
+            } catch (error) {
+                console.error('Error loading reports:', error);
+                document.getElementById('forex-report').textContent = '[Error loading forex report]';
+                document.getElementById('stock-report').textContent = '[Error loading stock report]';
+                document.getElementById('crypto-report').textContent = '[Error loading crypto report]';
+                document.getElementById('ticker').textContent = 'Error loading ticker';
+            }
+        }
+
+        // Fetch news using NewsAPI
+        async function fetchNews(category, elementId) {
+            const apiKey = '0abc5619e93d482c969f51557a375a9e';
+            const queries = {
+                forex: 'forex OR USD OR EUR/USD OR USD/JPY',
+                stocks: 'stock market OR JP Morgan OR Netflix OR Palantir',
+                crypto: 'cryptocurrency OR bitcoin OR ethereum'
+            };
+            const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(queries[category])}&apiKey=${apiKey}&language=en&sortBy=publishedAt&pageSize=5`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                const newsElement = document.getElementById(elementId);
+                if (data.articles && data.articles.length > 0) {
+                    newsElement.innerHTML = data.articles.map(article => `
+                        <div class="news-item">
+                            <a href="${article.url}" target="_blank">${sanitizeText(article.title)}</a>
+                            <p>${sanitizeText(article.description || 'No description available')} (${sanitizeText(article.source.name)}, ${new Date(article.publishedAt).toLocaleDateString()})</p>
+                        </div>
+                    `).join('');
+                } else {
+                    newsElement.textContent = 'No news available';
+                }
+            } catch (error) {
+                console.error('Error fetching news:', error);
+                document.getElementById(elementId).textContent = 'Error loading news';
+            }
+        }
+
+        // Load reports and news on page load
+        window.onload = () => {
+            loadReports();
+            fetchNews('forex', 'forex-news');
+            fetchNews('stocks', 'stock-news');
+            fetchNews('crypto', 'crypto-news');
+        };
+
+        // Form submission for manual updates
+        document.getElementById('update-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('forex-report').textContent = sanitizeText(document.getElementById('forex-input').value || '[No Forex Report Available]');
+            document.getElementById('stock-report').textContent = sanitizeText(document.getElementById('stock-input').value || '[No Stock Report Available]');
+            document.getElementById('crypto-report').textContent = sanitizeText(document.getElementById('crypto-input').value || '[No Crypto Report Available]');
+            const tickerInput = sanitizeText(document.getElementById('ticker-input').value || 'No ticker updates available');
+            const tickerElement = document.getElementById('ticker');
+            tickerElement.textContent = tickerInput;
+            const duration = Math.max(60, tickerInput.length * 0.5);
+            tickerElement.style.animationDuration = `${duration}s`;
+        });
 
         // Sample Chart.js chart for Forex (EUR/USD)
         const forexChart = new Chart(document.getElementById('forexChart'), {
@@ -248,7 +343,7 @@
             }
         });
 
-        // Sample Chart.js chart for Stocks (JPM)
+        // Sample Chart.js chart for Stocks
         const stockChart = new Chart(document.getElementById('stockChart'), {
             type: 'bar',
             data: {
@@ -267,6 +362,28 @@
                     x: { title: { display: true, text: 'Stock' } }
                 },
                 plugins: { title: { display: true, text: 'Stock Performance (Week of August 3, 2025)' } }
+            }
+        });
+
+        // Sample Chart.js chart for Crypto (BTC/USD)
+        const cryptoChart = new Chart(document.getElementById('cryptoChart'), {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                datasets: [{
+                    label: 'BTC/USD Price',
+                    data: [60000, 60200, 59800, 60500, 60000],
+                    borderColor: '#FF9800',
+                    backgroundColor: 'rgba(255, 152, 0, 0.2)',
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: { title: { display: true, text: 'Price ($)' } },
+                    x: { title: { display: true, text: 'Day' } }
+                },
+                plugins: { title: { display: true, text: 'BTC/USD Daily Trend (Week of July 28, 2025)' } }
             }
         });
     </script>
